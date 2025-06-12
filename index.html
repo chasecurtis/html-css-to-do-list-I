@@ -3,33 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>TO DO List</title>
   </head>
 
   <body>
     <nav></nav>
     <header>
-      <h1>TODO</h1>
+      <h1>TO DO</h1>
     </header>
     <main>
-      <ul>
+      <ul id="task-list">
         <li><input type="checkbox" />Go for a run</li>
         <li><input type="checkbox" />Read a book</li>
         <li><input type="checkbox" />Write some code</li>
         <li><input type="checkbox" />Lift some weights</li>
       </ul>
-      <form>
+      <form id="submit-task-form">
         <input type="text" name="task" placeholder="Enter your next task..." />
         <input type="submit" name="submit" value="Submit Task" />
       </form>
-      <p>
+      <div id="img-div">
         <img
+          id="todo-meme"
           src="https://preview.redd.it/psor2jzbnk561.jpg?width=1080&crop=smart&auto=webp&s=e3db0ad4211b0511c7ec716c2e38de20ce204db7"
-          style="width: 500px; height: 600px"
+          style="width: 400px; height: 500px"
         />
-      </p>
+      </div>
     </main>
     <footer>
-      <p>2025 TODO LIST INC.©</p>
+      <p>2025 TO DO LIST INC.©</p>
     </footer>
   </body>
 </html>
