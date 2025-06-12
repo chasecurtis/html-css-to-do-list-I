@@ -45,6 +45,14 @@
         const checkbox = document.createElement("input");
         checkbox.type = "checkbox";
 
+        checkbox.addEventListener("change", function(){
+          if (this.checked){
+            setTimeout(() =>{
+              li.remove();
+            }, 1000);
+          }
+        });
+
         li.appendChild(checkbox);
         li.appendChild(document.createTextNode(" " + taskText));
 
@@ -52,6 +60,16 @@
 
         taskInput.value = "";
       }
+    });
+
+    document.querySelectorAll("#task-list input[type='checkbox']").forEach(checkbox => {
+      checkbox.addEventListener("change", function(){
+        if(this.checked){
+          setTimeout(() => {
+            this.parentElement.remove();
+          }, 1000);
+        }
+      });
     });
   </script>
 
