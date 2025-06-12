@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
@@ -11,25 +12,48 @@
       <h1>TODO</h1>
     </header>
     <main>
-      <ul>
+      <form id="task-form">
+        <input type="text" id="task-input" name="task" placeholder="Enter your next task..." />
+        <input type="submit" value="Submit Task" />
+      </form>
+      <ul id="task-list">
         <li><input type="checkbox" />Go for a run</li>
         <li><input type="checkbox" />Read a book</li>
         <li><input type="checkbox" />Write some code</li>
         <li><input type="checkbox" />Lift some weights</li>
       </ul>
-      <form>
-        <input type="text" name="task" placeholder="Enter your next task..." />
-        <input type="submit" name="submit" value="Submit Task" />
-      </form>
-      <p>
+      <div class="image-container">
         <img
           src="https://preview.redd.it/psor2jzbnk561.jpg?width=1080&crop=smart&auto=webp&s=e3db0ad4211b0511c7ec716c2e38de20ce204db7"
-          style="width: 500px; height: 600px"
+          alt="To Do List Meme"
         />
-      </p>
+      </div>
     </main>
     <footer>
       <p>2025 TODO LIST INC.©</p>
     </footer>
+
+      <script>
+    document.getElementById("task-form").addEventListener("submit", function(e){
+      e.preventDefault();
+
+      const taskInput = document.getElementById("task-input");
+      const taskText = taskInput.value.trim();
+
+      if (taskText !== ""){
+        const li = document.createElement("li");
+        const checkbox = document.createElement("input");
+        checkbox.type = "checkbox";
+
+        li.appendChild(checkbox);
+        li.appendChild(document.createTextNode(" " + taskText));
+
+        document.getElementById("task-list").appendChild(li);
+
+        taskInput.value = "";
+      }
+    });
+  </script>
+
   </body>
 </html>
