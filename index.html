@@ -47,9 +47,10 @@
 
         checkbox.addEventListener("change", function(){
           if (this.checked){
+            li.classList.add("fade-out");
             setTimeout(() =>{
               li.remove();
-            }, 1000);
+            }, 900);
           }
         });
 
@@ -65,9 +66,10 @@
     document.querySelectorAll("#task-list input[type='checkbox']").forEach(checkbox => {
       checkbox.addEventListener("change", function(){
         if(this.checked){
+          this.parentElement.classList.add("fade-out");
           setTimeout(() => {
             this.parentElement.remove();
-          }, 1000);
+          }, 900);
         }
       });
     });

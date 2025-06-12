@@ -101,3 +101,8 @@ footer {
     font-size: 0.9em;
     color: #555;
 }
+
+.fade-out {
+    opacity: 0;
+    transition: opacity 0.9s ease;
+}
